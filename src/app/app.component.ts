@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   onCreatePost(postData: { title: string; content: string }) {
     // Send Http request
     this.http
-      .post("https://learning-a9615.firebaseio.com/posts.json", postData)
+      .post("api", postData)
       .subscribe(responseData => {
         console.log(responseData);
       });
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   onFetchPosts() {
     // Send Http request
     this.http
-      .get("https://learning-a9615.firebaseio.com/posts.json")
+      .get("api")
       .pipe(
         map(responseData => {
           const resultArr = [];
